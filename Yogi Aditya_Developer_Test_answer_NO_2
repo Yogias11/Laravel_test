@@ -1,0 +1,18 @@
+1. 
+
+SELECT mp.name, SUM(tdd.qty) as laku FROM db_test.t_delivery_detail tdd 
+join db_test.m_product mp on mp.id = tdd.product_id 
+group by tdd.product_id 
+ORDER  by laku DESC 
+ 
+ 
+2. 
+select u.name as customer, mp.name as nama_produk, SUM(tdd.qty) as jumlah_terjual, AVG(tdd.qty) as rata2_produk FROM db_test.t_delivery td 
+join db_test.t_delivery_detail tdd on tdd.delivery_id = td.id 
+join db_test.users u on u.id = td.customer_id 
+join db_test.m_product mp on mp.id = tdd.product_id 
+GROUP by u.name, tdd.product_id 
+
+3.
+SELECT mp.name FROM db_test.m_product mp 
+where mp.id not IN (SELECT tdd2.product_id FROM db_test.t_delivery_detail tdd2)
