@@ -21,7 +21,7 @@ class TDeliveryDetail extends Migration
             $table->foreign('product_id')->references('id')->on('m_product');
             $table->integer('qty');
             $table->integer('amount');
-            $table->integer('status');
+            $table->integer('aktif');
             $table->timestamps();
         });
     }

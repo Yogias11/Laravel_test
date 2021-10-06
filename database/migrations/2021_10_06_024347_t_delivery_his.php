@@ -18,7 +18,7 @@ class TDeliveryHis extends Migration
             $table->unsignedBigInteger('delivery_id');
             $table->foreign('delivery_id')->references('id')->on('t_delivery');
             $table->date('tgl_delivery');
-            $table->integer('status');
+            $table->integer('aktif');
             $table->timestamps();
         });
     }

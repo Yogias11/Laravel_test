@@ -20,7 +20,7 @@ class TDelivery extends Migration
             $table->date('tgl_delivery');
             $table->unsignedBigInteger('kurir_id');
             $table->foreign('kurir_id')->references('id')->on('m_kurir');
-            $table->unsignedBigInteger('status');
+            $table->integer('aktif');
             $table->timestamps();
         });
     }
